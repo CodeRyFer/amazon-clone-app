@@ -1,8 +1,8 @@
 import React from 'react'
 import './Header.css'
-import logo from './img/f19bb147648f66e99b327ef65f5be67c'
+import logo from './logo.png';
 
-function header() {
+function Header() {
   return (
     <div className='header'>
         <img className='header__logo' src={logo} alt='Amazon Logo'></img>
@@ -14,15 +14,18 @@ function header() {
 
         <div className='header__nav'>
             <div className='header__option'>
-
+                <span className='header__optionLineOne'>Hello</span>
+                <span className='header__optionLineOne'>Sign in</span>
             </div>
 
             <div className='header__option'>
-                
+                <span className='header__optionLineOne'>Returns</span>
+                <span className='header__optionLineOne'>& Orders</span>
             </div>
 
             <div className='header__option'>
-                
+                <span className='header__optionLineOne'>Your</span>
+                <span className='header__optionLineOne'>Prime</span>
             </div>
         </div>
 
@@ -31,4 +34,4 @@ function header() {
   )
 }
 
-export default header
+export default Header
