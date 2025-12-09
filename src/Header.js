@@ -11,8 +11,9 @@ function Header() {
     const [{ basket, user }, dispatch] = useStateValue();
     return (
      <div className='header'>
+        <Link to="/">
          <img className='header__logo' src={logo} alt='Amazon Logo'></img>
-    
+        </Link>
          <div className='header__deliveryLocation'>
              <LocationOnOutlinedIcon className='header__locationIcon'></LocationOnOutlinedIcon>
              <div className='header__locationText'>

@@ -5,14 +5,12 @@ import "./index.css";
 import App from "./App";
 import reducer, { initialState } from "./reducer";
 import { StateProvider } from "./StateProvider";
-import { BrowserRouter as Router } from "react-router-dom";
+
 
 ReactDOM.render(
   <React.StrictMode>
     <StateProvider initialState={initialState} reducer={reducer}>
-      <Router>
       <App />
-      </Router>
     </StateProvider>
   </React.StrictMode>,
   document.getElementById("root")
