@@ -37,6 +37,11 @@
     color: #111;
 }
 
+button:hover {
+    background-color: #f0c14b93;
+    cursor: pointer;
+}
+
 .product__rating {
     display: flex;
 }
