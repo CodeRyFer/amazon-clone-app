@@ -23,6 +23,8 @@ function Subtotal() {
           </>
         )}
       />
+
+      <button>Proceed to Checkout</button>
     </div>
   );
 }
