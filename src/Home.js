@@ -14,7 +14,7 @@ function Home() {
       <div className='home__row'>
         <Product id="12321341" 
           title='The Lean Startup' 
-          price='19.99' 
+          price={19.99}
           image={LeanStartupImg} 
           rating={5}
         />
