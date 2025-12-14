@@ -1,7 +1,17 @@
 import React from 'react'
 import './CheckoutProduct.css'
+import { useStateValue } from './StateProvider';
 
 function CheckoutProduct({id, image, title, price, rating }) {
+    const [{ basket }, dispatch] = useStateValue();
+
+    const removeFromBasket = () => {
+        dispatch({
+            type: 'REMOVE_FROM_BASKET',
+            id:id,
+        })
+    }
+
   return (
     <div className='checkoutProduct'>
         
@@ -17,8 +27,9 @@ function CheckoutProduct({id, image, title, price, rating }) {
             <div className='checkoutProduct__rating'>
                 {Array(rating).fill().map((__,i) => (<p>🌟</p>))}
             </div>
+
+            <button onClick={removeFromBasket}>Remove from basket</button>
         </div>
-        <button>Remove from basket</button>
     </div>
   )
 }
