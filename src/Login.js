@@ -13,9 +13,9 @@ function Login() {
   } 
 
   const register = e => {
-    e.preventDefault();
+    preventDefault();
 
-    
+
   }
   return (
     
