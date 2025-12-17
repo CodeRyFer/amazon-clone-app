@@ -2,18 +2,22 @@ import React, { useState } from 'react'
 import './Login.css'
 import loginLogo from './img/loginLogo.png';
 import { Link } from 'react-router-dom'
+import { auth } from './firebase';
 
 function Login() {
   const [email, setEmail]  = useState('');
   const [password, setPassword]  = useState('');
 
   const signIn = e => {
-    preventDefault();
+    e.preventDefault();
 
   } 
 
   const register = e => {
-    preventDefault();
+    e.preventDefault();
+
+    auth.createUserWithEmailAndPassowrd(email, password).then((auth) => { console.log(auth)})
+    .catch(error => alert(error.message))
 
 
   }
