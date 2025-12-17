@@ -12,12 +12,20 @@ function Login() {
   const signIn = e => {
     e.preventDefault();
 
+    auth
+        .signInWithEmailAndPassword(email, password)
+        .then((authUser) => {
+            console.log(authUser);
+            history.push('/');
+    })
+    .catch(error => alert(error.message))
+
   } 
 
   const register = e => {
     e.preventDefault();
 
-    auth.createUserWithEmailAndPassowrd(email, password)
+    auth.createUserWithEmailAndPassword(email, password)
     .then((auth) => { 
         console.log(auth);
         if (auth){
