@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import './Login.css'
 import loginLogo from './img/loginLogo.png';
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { auth } from './firebase';
 
-function Login() {
+function Login() {    
   const [email, setEmail]  = useState('');
   const [password, setPassword]  = useState('');
+  const history = useHistory();
 
   const signIn = e => {
     e.preventDefault();
@@ -16,7 +17,13 @@ function Login() {
   const register = e => {
     e.preventDefault();
 
-    auth.createUserWithEmailAndPassowrd(email, password).then((auth) => { console.log(auth)})
+    auth.createUserWithEmailAndPassowrd(email, password)
+    .then((auth) => { 
+        console.log(auth);
+        if (auth){
+            history.push('/')
+        }
+    })
     .catch(error => alert(error.message))
 
 
